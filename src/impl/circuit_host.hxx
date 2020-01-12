@@ -48,6 +48,9 @@ namespace twice_size {
         bool result(false);
         std::thread([this, &result]() {
             result = m_mutex.try_lock();
+	    if (result) {
+	        m_mutex.unlock();
+            }
         }).join();
         return !result;
     }
