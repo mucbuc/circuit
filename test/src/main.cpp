@@ -3,12 +3,11 @@
 
 #include <tmp/src/test.h>
 
-#include <lib/circuit/src/factory.h>
+#include <lib/circuit/src/index.h>
 
 template <class T>
 void test_wait_pop(T s)
 {
-
     auto tmp = std::thread([=]() {
         int i(0);
         s->wait_pop(i);
@@ -23,8 +22,8 @@ int main()
 {
     using namespace om636::twice_size;
 
-    test_wait_pop(make_stack<int>());
-    test_wait_pop(make_queue<int>());
+    test_wait_pop(std::make_shared<CircuitStack<int>>());
+    test_wait_pop(std::make_shared<CircuitQueue<int>>());
 
     return 0;
 }
