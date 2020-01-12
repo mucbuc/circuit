@@ -23,8 +23,8 @@ int main()
 {
     using namespace om636::twice_size;
 
-    test_wait_pop(std::shared_ptr<Circuit<int>>(make_stack<int>()));
-    test_wait_pop(std::shared_ptr<Circuit<int>>(make_queue<int>()));
+    test_wait_pop(make_stack<int>());
+    test_wait_pop(make_queue<int>());
 
     return 0;
 }

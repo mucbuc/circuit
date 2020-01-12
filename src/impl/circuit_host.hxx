@@ -45,10 +45,10 @@ namespace twice_size {
     template <typename T, template <typename> class U>
     bool CircuitHost<T, U>::is_locked() const
     {
-	bool result( false ); 
-	std::thread([this, & result]() {
-	   result = m_mutex.try_lock();
-	}).join(); 
+        bool result(false);
+        std::thread([this, &result]() {
+            result = m_mutex.try_lock();
+        }).join();
         return !result;
     }
 
