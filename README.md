@@ -33,9 +33,9 @@ int main()
     auto t = thread([&]() {
         int i(0);
         s.wait_pop(i);
-	cout << "popped: " << i << endl;
-	s.push(88);
-	s.push(77);
+	    cout << "popped: " << i << endl;
+	    s.push(88);
+	    s.push(77);
     });
 
     s.push(99);
