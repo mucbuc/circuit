@@ -48,8 +48,9 @@ int main()
 }
 ```
 
-#####output
+#####output 
+```
 popped: 99
 popped: 77
 popped: 88
-
+```
