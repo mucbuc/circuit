@@ -1,6 +1,3 @@
-#include <iostream>
-#include <thread>
-
 #include <tmp/src/test.h>
 
 #include <lib/circuit/src/index.h>
@@ -12,19 +9,11 @@ int main()
 {
     CircuitStack<int> s;
 	
-    auto t = thread([&]() {
-        int i(0);
-        s.wait_pop(i);
-	cout << "popped: " << i << endl;
-	s.push(88);
-	s.push(77);
-    });
+    s.push(88);
+    s.push(77);
 
-    s.push(99);
-    t.join();
-
-    int i(0);
-    while (s.check_pop(i)) {
-    	cout << "popped: " << i << endl;
+    s.wait_pop(i);
+    if (s.check_pop(i)) {
+    
     }
 }
