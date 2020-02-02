@@ -1,7 +1,3 @@
-
-> circuit@1.0.0 generateDoc /home/mark/work/circuit
-> doc-tool package_header src_interface ./EXAMPLE.md
-
 #circuit
 
 Syncronize container operations for single objects
