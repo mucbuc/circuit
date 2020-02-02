@@ -1,8 +1,8 @@
-#circuit
+# circuit
 
 Syncronize container operations for single objects
 
-# Interface
+## Interface
 ```
 #pragma once
 
@@ -48,11 +48,5 @@ int main()
     
     }
 }
-```
-
-##### output 
-```
-popped: 77
-popped: 88
 ```
 

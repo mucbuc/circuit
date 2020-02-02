@@ -26,10 +26,4 @@ int main()
     }
 }
 ${tbt}
-
-##### output 
-${tbt}
-popped: 77
-popped: 88
-${tbt}
 `;
