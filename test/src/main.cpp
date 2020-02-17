@@ -18,10 +18,11 @@ void test_wait_pop(T s)
     tmp.join();
 }
 
-template<class T>
-void test_ctor_and_swap() {
-  T a, b;
-  a.swap(b);
+template <class T>
+void test_ctor_and_swap()
+{
+    T a, b;
+    a.swap(b);
 }
 
 int main()

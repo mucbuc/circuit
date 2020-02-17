@@ -6,6 +6,8 @@ Syncronize container operations for single objects
 ```
 #pragma once
 
+#include <memory>
+
 namespace om636 {
 namespace circuit {
 
