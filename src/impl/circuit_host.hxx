@@ -103,9 +103,9 @@ namespace circuit {
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     template <typename T, template <typename> class U>
-    auto CircuitHost<T, U>::clone() const -> CircuitHost*
+    auto CircuitHost<T, U>::clone() const -> std::shared_ptr<base_type>
     {
-        return new CircuitHost(*this);
+        return std::make_shared<CircuitHost>(*this);
     }
 
 } // circuit

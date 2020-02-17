@@ -29,7 +29,7 @@ namespace circuit {
         void push(value_type&&) override;
         bool check_pop(value_type&) override;
         void wait_pop(value_type&) override;
-        CircuitHost* clone() const override;
+        std::shared_ptr<base_type> clone() const override;
 
     private:
         typedef U<T> policy_type;
