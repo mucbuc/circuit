@@ -33,8 +33,7 @@ namespace circuit {
 
 ```
 
-
-## Example
+## Example 
 ```
 #include <tmp/src/test.h>
 
@@ -45,16 +44,15 @@ using namespace om636::circuit;
 
 int main()
 {
-    CircuitStack<int> s;
-	
-    s.push(88);
-    s.push(77);
+    auto s = make_stack<int>();
 
-    int i;
-    s.wait_pop(i);
-    if (s.check_pop(i)) {
-    
+    s->push(88);
+    s->push(77);
+
+    s->wait_pop(i);
+    if (s->check_pop(i)) {
     }
 }
+
 ```
 
