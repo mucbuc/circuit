@@ -18,15 +18,20 @@ void test_wait_pop(T s)
     tmp.join();
 }
 
+template<class T>
+void test_ctor_and_swap() {
+  T a, b;
+  a.swap(b);
+}
+
 int main()
 {
     using namespace om636::circuit;
 
-    test_wait_pop(std::make_shared<CircuitStack<int>>());
-    test_wait_pop(std::make_shared<CircuitQueue<int>>());
-
-    CircuitQueue<int> a, b;
-    a.swap(b);
+    test_wait_pop(make_stack<int>());
+    test_wait_pop(make_queue<int>());
+    test_ctor_and_swap<CircuitQueue<int>>();
+    test_ctor_and_swap<CircuitStack<int>>();
 
     return 0;
 }
