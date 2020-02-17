@@ -1,8 +1,8 @@
 {	
 	"name": "circuit",
 	"sources": [
-		"src/factory.h",
 		"src/interface.h",
+		"src/index.h",
 		"src/impl/stack.h",
 		"src/impl/queue.h",
 		"src/impl/curcuit_host.h",

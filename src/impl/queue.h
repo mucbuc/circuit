@@ -59,5 +59,11 @@ namespace circuit {
         std::queue<value_type> m_queue;
     };
 
+    template <typename T>
+    std::shared_ptr<Circuit<T>> make_queue()
+    {
+        return std::make_shared<CircuitHost<T, QueuePolicy>>();
+    }
+
 } // circuit
 } // om636

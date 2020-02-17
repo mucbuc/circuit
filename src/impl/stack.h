@@ -59,5 +59,12 @@ namespace circuit {
         std::stack<value_type> m_stack;
     };
 
+    template <typename T>
+    std::shared_ptr<Circuit<T>> make_stack()
+    {
+        return std::make_shared<CircuitHost<T, StackPolicy>>();
+    }
+
+
 } // circuit
 } // om636

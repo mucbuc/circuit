@@ -14,5 +14,11 @@ namespace circuit {
         virtual Circuit* clone() const = 0;
     };
 
+    template <typename T>
+    std::shared_ptr<Circuit<T>> make_stack();
+
+    template <typename T>
+    std::shared_ptr<Circuit<T>> make_queue();
+ 
 } // circuit
 } // om636
