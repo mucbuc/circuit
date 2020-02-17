@@ -19,6 +19,6 @@ namespace circuit {
 
     template <typename T>
     std::shared_ptr<Circuit<T>> make_queue();
- 
+
 } // circuit
 } // om636

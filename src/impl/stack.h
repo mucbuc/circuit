@@ -65,6 +65,5 @@ namespace circuit {
         return std::make_shared<CircuitHost<T, StackPolicy>>();
     }
 
-
 } // circuit
 } // om636

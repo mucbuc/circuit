@@ -64,7 +64,8 @@ namespace circuit {
             if (result) {
                 m_mutex.unlock();
             }
-        }).join();
+        })
+            .join();
         return !result;
     }
 
