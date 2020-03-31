@@ -1,0 +1,6 @@
+---
+import:
+- lib/circuit/circuit.yml
+sources:
+- src/main.cpp
+
