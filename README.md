@@ -1,6 +1,6 @@
 # circuit
 
-Syncronize container operations for single objects
+Synchronize container operations for single objects
 
 ## Interface
 ```
