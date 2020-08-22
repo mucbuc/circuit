@@ -49,10 +49,11 @@ int main()
     s->push(88);
     s->push(77);
 
+    int i(0);
     s->wait_pop(i);
     if (s->check_pop(i)) {
     }
 }
 
 ```
-test
+
