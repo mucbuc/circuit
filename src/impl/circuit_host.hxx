@@ -58,14 +58,10 @@ namespace circuit {
     template <typename T, template <typename> class U>
     bool CircuitHost<T, U>::is_locked() const
     {
-        bool result(false);
-        std::thread([this, &result]() {
-            result = m_mutex.try_lock();
-            if (result) {
-                m_mutex.unlock();
-            }
-        })
-            .join();
+        bool result { m_mutex.try_lock() };
+        if (result) {
+            m_mutex.unlock();
+        }
         return !result;
     }
 
