@@ -17,3 +17,19 @@ set_target_properties(Example PROPERTIES
 )
 
 target_include_directories(Example SYSTEM PUBLIC ${CMAKE_SOURCE_DIR})
+
+
+add_executable(Test src/main.cpp)
+
+target_link_libraries(Test INTERFACE asserter)
+target_link_libraries(Test PRIVATE circuit)
+
+set_target_properties(Test PROPERTIES
+    CXX_STANDARD 20
+	CXX_STANDARD_REQUIRED ON
+	CXX_EXTENSIONS OFF
+	COMPILE_WARNING_AS_ERROR ON
+)
+
+target_include_directories(Test SYSTEM PUBLIC ${CMAKE_SOURCE_DIR})
+

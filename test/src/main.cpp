@@ -1,9 +1,8 @@
 #include <memory>
 #include <vector>
 
-#include <tmp/src/test.h>
-
-#include <lib/circuit/src/index.h>
+#include <lib/asserter/src/test.hpp>
+#include <lib/circuit/src/index.hpp>
 
 template <class T>
 void test_wait_pop(T s)
