@@ -1,8 +1,8 @@
 #pragma once
 
-#include "impl/circuit_host.h"
-#include "impl/queue.h"
-#include "impl/stack.h"
+#include "impl/circuit_host.hpp"
+#include "impl/queue.hpp"
+#include "impl/stack.hpp"
 
 namespace om636 {
 namespace circuit {

@@ -2,9 +2,8 @@
 
 #include <condition_variable>
 #include <mutex>
-#include <thread>
 
-#include "../interface.h"
+#include "../interface.hpp"
 
 namespace om636 {
 namespace circuit {
@@ -23,7 +22,6 @@ namespace circuit {
 
         void swap(CircuitHost&);
         bool empty() const;
-        bool is_locked() const;
 
         ~CircuitHost() override = default;
         void push(value_type&&) override;
@@ -33,9 +31,9 @@ namespace circuit {
 
     private:
         typedef U<T> policy_type;
-        typedef std::lock_guard<std::mutex> lock_type;
         typedef std::mutex mutex_type;
-
+        typedef std::lock_guard<mutex_type> lock_type;
+        
         mutable mutex_type m_mutex;
         std::condition_variable m_condition;
     };

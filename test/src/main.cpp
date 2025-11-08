@@ -1,13 +1,14 @@
 #include <memory>
 #include <vector>
+#include <thread>
 
-#include <tmp/src/test.h>
-
-#include <lib/circuit/src/index.h>
+#include <lib/asserter/src/test.hpp>
+#include <lib/circuit/src/index.hpp>
 
 template <class T>
 void test_wait_pop(T s)
 {
+#ifndef __EMSCRIPTEN__
     auto tmp = std::thread([=]() {
         int i(0);
         s->wait_pop(i);
@@ -16,6 +17,12 @@ void test_wait_pop(T s)
 
     s->push(99);
     tmp.join();
+#else
+    s->push(99);
+    int i(0);
+    s->wait_pop(i);
+    ASSERT(i == 99);
+#endif 
 }
 
 template <class T>
