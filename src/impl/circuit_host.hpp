@@ -23,7 +23,10 @@ namespace circuit {
         void swap(CircuitHost&);
         bool empty() const;
 
-        ~CircuitHost() override = default;
+        /**
+ * @brief Destroy the CircuitHost, releasing owned resources and synchronization primitives.
+ */
+~CircuitHost() override = default;
         void push(value_type&&) override;
         bool check_pop(value_type&) override;
         void wait_pop(value_type&) override;

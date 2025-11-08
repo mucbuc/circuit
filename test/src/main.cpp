@@ -6,6 +6,15 @@
 #include <lib/circuit/src/index.hpp>
 
 template <class T>
+/**
+ * @brief Verifies that a container-like object yields the pushed value 99 when popped.
+ *
+ * Calls push(99) on the provided container and ensures wait_pop retrieves the value 99.
+ * On non-EMSCRIPTEN builds the pop is performed in a background thread to exercise waiting behavior; on EMSCRIPTEN builds the sequence runs synchronously.
+ *
+ * @tparam T Type of the container-like object; must provide `push(int)` and `wait_pop(int&)`.
+ * @param s Pointer-like container instance whose `push` and `wait_pop` methods will be exercised.
+ */
 void test_wait_pop(T s)
 {
 #ifndef __EMSCRIPTEN__

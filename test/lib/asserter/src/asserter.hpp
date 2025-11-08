@@ -19,10 +19,24 @@
 template <typename T = void>
 class asserter_t {
 public:
-    asserter_t(bool = false) { }
+    /**
+ * @brief Construct an asserter capturing the assertion outcome.
+ *
+ * @param value Assertion result: `true` if the asserted expression evaluated as passing, `false` if it failed. Defaults to `false`.
+ */
+asserter_t(bool = false) { }
 
     template <class U>
-    const asserter_t operator()(const U&) const { return asserter_t(); }
+    /**
+ * @brief Accepts a value to continue assertion chaining and yields an `asserter_t`.
+ *
+ * The parameter's type is used to select or propagate information into the assertion chain; the value itself is not inspected.
+ *
+ * @tparam U Type of the provided value.
+ * @param value Input value whose type participates in the chaining.
+ * @return const asserter_t An `asserter_t` instance suitable for further fluent assertion calls.
+ */
+const asserter_t operator()(const U&) const { return asserter_t(); }
 };
 
 #else
