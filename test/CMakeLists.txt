@@ -3,10 +3,11 @@ cmake_minimum_required(VERSION 3.27)
 project(Example)
 
 add_subdirectory(lib/circuit)
+add_subdirectory(lib/asserter)
 
 add_executable(Example src/example.cpp)
 
-target_link_libraries(Example INTERFACE asserter)
+target_link_libraries(Example PRIVATE asserter)
 target_link_libraries(Example PRIVATE circuit)
 
 set_target_properties(Example PROPERTIES

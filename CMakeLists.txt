@@ -4,12 +4,7 @@ project(circuit)
 add_library(circuit INTERFACE)
 
 target_include_directories(circuit INTERFACE
-    src/interface.hpp
-    src/index.hpp
-    src/impl/circuit_host.hpp
-    src/impl/circuit_host.hxx
-    src/impl/queue.hpp
-    src/impl/stack.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 set_target_properties(circuit PROPERTIES
