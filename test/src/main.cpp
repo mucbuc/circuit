@@ -1,5 +1,6 @@
 #include <memory>
 #include <vector>
+#include <thread>
 
 #include <lib/asserter/src/test.hpp>
 #include <lib/circuit/src/index.hpp>
