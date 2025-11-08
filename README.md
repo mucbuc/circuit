@@ -1,5 +1,7 @@
 # circuit
 
+![Test](https://github.com/mucbuc/circuit/workflows/Test/badge.svg)
+
 Synchronize container operations for single objects
 
 ## Interface
