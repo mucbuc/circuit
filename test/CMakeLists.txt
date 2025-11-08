@@ -16,6 +16,14 @@ set_target_properties(Example PROPERTIES
 	COMPILE_WARNING_AS_ERROR ON
 )
 
+if (EMSCRIPTEN)
+    set_target_properties(Example PROPERTIES SUFFIX ".html")
+    target_link_options(Example PRIVATE 
+        --emrun
+        -sASSERTIONS=1
+    )
+endif()
+
 target_include_directories(Example SYSTEM PUBLIC ${CMAKE_SOURCE_DIR})
 
 
@@ -30,6 +38,14 @@ set_target_properties(Test PROPERTIES
 	CXX_EXTENSIONS OFF
 	COMPILE_WARNING_AS_ERROR ON
 )
+
+if (EMSCRIPTEN)
+    set_target_properties(Test PROPERTIES SUFFIX ".html")
+    target_link_options(Test PRIVATE 
+        --emrun
+        -sASSERTIONS=1
+    )
+endif()
 
 target_include_directories(Test SYSTEM PUBLIC ${CMAKE_SOURCE_DIR})
 

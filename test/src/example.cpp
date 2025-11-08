@@ -16,6 +16,8 @@ int main()
 
     int i(0);
     s->wait_pop(i);
+    ASSERT(i == 77);
     if (s->check_pop(i)) {
+        ASSERT(i == 88);
     }
 }

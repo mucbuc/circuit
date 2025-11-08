@@ -1,3 +1,5 @@
+#include <thread>
+
 namespace om636 {
 namespace circuit {
 
@@ -56,17 +58,6 @@ namespace circuit {
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     template <typename T, template <typename> class U>
-    bool CircuitHost<T, U>::is_locked() const
-    {
-        bool result { m_mutex.try_lock() };
-        if (result) {
-            m_mutex.unlock();
-        }
-        return !result;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////////////
-    template <typename T, template <typename> class U>
     void CircuitHost<T, U>::push(value_type&& v)
     {
         lock_type lock(m_mutex);
@@ -92,7 +83,7 @@ namespace circuit {
     template <typename T, template <typename> class U>
     void CircuitHost<T, U>::wait_pop(value_type& value)
     {
-        std::unique_lock<std::mutex> lock(m_mutex);
+        std::unique_lock<mutex_type> lock(m_mutex);
         m_condition.wait(lock, [this] { return !policy_type::on_empty(*this); });
         policy_type::on_pop(*this, value);
     }
