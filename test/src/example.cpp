@@ -1,6 +1,8 @@
-#include <tmp/src/test.h>
+#include <lib/asserter/src/test.hpp>
 
-#include <lib/circuit/src/index.h>
+#include <lib/circuit/src/interface.hpp>
+#include <lib/circuit/src/index.hpp>
+
 
 using namespace std;
 using namespace om636::circuit;

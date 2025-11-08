@@ -4,7 +4,7 @@
 #include <mutex>
 #include <thread>
 
-#include "../interface.h"
+#include "../interface.hpp"
 
 namespace om636 {
 namespace circuit {
