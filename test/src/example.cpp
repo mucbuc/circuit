@@ -1,7 +1,7 @@
-#include <lib/asserter/src/test.hpp>
+#include <asserter/src/test.hpp>
 
-#include <lib/circuit/src/interface.hpp>
-#include <lib/circuit/src/index.hpp>
+#include <circuit/src/interface.hpp>
+#include <circuit/src/index.hpp>
 
 
 using namespace std;
